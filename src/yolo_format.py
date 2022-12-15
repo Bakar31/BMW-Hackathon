@@ -1,7 +1,7 @@
 import cv2
 import pybboxes as pbx
 
-img = cv2.imread('images/1.jpg')
+img = cv2.imread('./images/1.jpg')
 box = (419, 113, 820, 396)
 # print(img.shape)
 img_width = img.shape[1]

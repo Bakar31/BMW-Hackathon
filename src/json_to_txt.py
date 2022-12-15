@@ -14,7 +14,6 @@ with open('labels/51.json') as f:
     objects_classes = json.load(f)
 
 img = cv2.imread('images/51.jpg')
-# with open('test.txt', 'w') as text_file:
 for objects in objects_classes:
     class_id = objects['ObjectClassId']
     x1 = objects['Left']
