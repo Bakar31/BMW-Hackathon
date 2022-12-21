@@ -1,55 +1,22 @@
-class_map = {
-   0 : 1011,
-   1 : 1012,
-   2 : 1013,
-   3 : 1100,
-   4 : 2050,
-   5 : 1040,
-   6 : 1030,
-   7 : 1120,
-   8 : 1110,
-   9 : 1135,
-   10 : 4000,
-   11 : 5010,
-   12 : 1003,
-   13 : 1002,
-   14 : 1070,
-   15 : 2010,
-   16 : 2000
-}
-
-class_name_map = {
-    1011: 'l_klt_4147',
-    1012: 'l_klt_6147',
-    1013: 'l_klt_8210',
-    1100: 'pallet',
-    2050: 'str',
-    1040: 'cabinet',
-    1030: 'locker',
-    1120: 'jack',
-    1110: 'dolly',
-    1135: 'spring_post',
-    4000: 'exit_sign',
-    5010: 'fire_extinguisher',
-    1003: 'stillage_open',
-    1002: 'stillage_close',
-    1070: 'cardboard_box',
-    2010: 'forklift',
-    2000: 'bicycle'
-}
-
 import os
 import cv2
 import numpy as np
 
+text_file_path = '/kaggle/working/yolov5/runs/detect/exp/labels'
+img_file_path = '/kaggle/input/bmw-hackerearth/eval/eval/images'
 
-text_file_path = '/content/drive/MyDrive/BMW_Hackathon/yolov5/runs/detect/exp2/labels'
-img_file_path = '/content/drive/MyDrive/BMW_Hackathon/eval/images'
+class_map = {
+   0 : 1011, 1 : 1012, 2 : 1013, 3 : 1100, 4 : 2050, 5 : 1040, 6 : 1030, 7 : 1120, 8 : 1110, 9 : 1135, 10 : 4000, 11 : 5010, 12 : 1003,
+   13 : 1002, 14 : 1070, 15 : 2010, 16 : 2000}
+
+class_name_map = {
+    1011: 'l_klt_4147', 1012: 'l_klt_6147', 1013: 'l_klt_8210', 1100: 'pallet', 2050: 'str', 1040: 'cabinet', 1030: 'locker',
+    1120: 'jack', 1110: 'dolly', 1135: 'spring_post', 4000: 'exit_sign', 5010: 'fire_extinguisher', 1003: 'stillage_open',
+    1002: 'stillage_close', 1070: 'cardboard_box', 2010: 'forklift', 2000: 'bicycle'}
 
 files = os.listdir(text_file_path)
 for label in range(len(files)):
     label_name = files[label].split('.')[0]
-    # print(label_name)
     ImageID = f'{label_name}.jpg'
     print(ImageID)
     print(os.path.join(img_file_path,ImageID))
@@ -59,6 +26,7 @@ for label in range(len(files)):
 
     with open(os.path.join(text_file_path,files[label]), 'r') as f:
         lines = f.readlines()
+
         for line in lines:
           line = np.float64(line.split(" "))
           cx = float(line[1])
