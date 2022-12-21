@@ -2,12 +2,11 @@ import json
 import cv2
 
 with open('objectclasses.json') as f:
-        objects = json.load(f)
+    objects = json.load(f)
 
 class_dict = {}
 for classes in objects:
     class_dict[classes['Id']] = classes['Name']
-# print(class_dict)
 
 
 with open('labels/51.json') as f:
@@ -23,7 +22,5 @@ for objects in objects_classes:
     print(class_id, x1, y1, x2, y2)
     cv2.rectangle(img, (x1, y1), (x2, y2), (255, 255, 0))
     
-
-
 cv2.imshow('box', img)
 cv2.waitKey(0)
