@@ -34,14 +34,12 @@ def convert(file, bboxes):
 
 for file in tqdm.tqdm(os.listdir('dataset/json_labels')):
     path = 'dataset/json_labels/' + file
-    # print(path)
     
     with open(path) as f:
         objects_classes = json.load(f)
     
     for objects in objects_classes:
         try:
-            # print(objects)
             class_id = int(objects['ObjectClassId'])
             class_id = class_map[class_id]
             x1 = objects['Left']
@@ -49,11 +47,9 @@ for file in tqdm.tqdm(os.listdir('dataset/json_labels')):
             x2 = objects['Right']
             y2 = objects['Bottom']
             bboxes = (x1, y1, x2, y2)
-            # print(class_id, bboxes)
             
             yolo_boxes = list(convert(file, bboxes))
             text = str(class_id) + ' ' + str(yolo_boxes[0]) + ' ' + str(yolo_boxes[1]) + ' ' + str(yolo_boxes[2]) + ' ' + str(yolo_boxes[3]) + '\n'
-            # print(text)
 
             text_path = 'dataset/labels/' + file[:-5] + '.txt'
             if os.path.exists(text_path):
@@ -69,4 +65,3 @@ for file in tqdm.tqdm(os.listdir('dataset/json_labels')):
                     text_file.write(text)
         except:
             pass
-                
