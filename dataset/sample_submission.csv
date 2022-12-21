@@ -1,6 +1,0 @@
-detection_id,image_name,image_width,image_height,object_class_id,object_class_name,bbox_left,bbox_top,bbox_right,bbox_bottom,confidence
-0,1.jpg,280,240,1015,l_klt_8210,1023,5,110,200,10
-1,1.jpg,280,240,1015,l_klt_8210,1165,5,110,180,10
-2,1.jpg,280,240,1015,l_klt_8210,1179,0,110,200,10
-3,1.jpg,280,240,1015,l_klt_8210,1041,0,140,180,10
-4,1.jpg,280,240,1015,l_klt_8210,1051,123,180,200,10

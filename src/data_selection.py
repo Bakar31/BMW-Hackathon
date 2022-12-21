@@ -16,7 +16,7 @@ for i in range(0, len(os.listdir(img_path_source)), 50):
     lbl_dest = label_path_dest + str(i) + '.json'
 
     try:
-        # shutil.copyfile(img_src, img_dest)
+        shutil.copyfile(img_src, img_dest)
         shutil.copyfile(lbl_src, lbl_dest)
     except:
         pass
