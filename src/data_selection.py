@@ -5,7 +5,7 @@ img_path_source = 'Data/SORDI_2022_Single_Assets/SORDI_2022_h4018_KLT on rack/im
 label_path_source = 'Data/SORDI_2022_Single_Assets/SORDI_2022_h4018_KLT on rack/labels/json/'
 
 img_path_dest = 'S_Data/SORDI_2022_Single_Assets/SORDI_2022_h4020_warehouse/images/'
-label_path_dest = 'json_lbl/'
+label_path_dest = 'S_Data/SORDI_2022_Single_Assets/SORDI_2022_h4020_warehouse/json_lbl/'
 
 
 for i in range(0, len(os.listdir(img_path_source)), 50):
