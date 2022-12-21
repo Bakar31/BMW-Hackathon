@@ -3,20 +3,12 @@ import pybboxes as pbx
 
 img = cv2.imread('./images/1.jpg')
 box = (419, 113, 820, 396)
-# print(img.shape)
 img_width = img.shape[1]
 img_height = img.shape[0]
 
-# x1, y1, x2, y2 = box
-# cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0))
-# cv2.imshow('box', img)
-# cv2.waitKey(0)
-
-# voc_bbox = (100, 100, 200, 200)
-W, H = img_width, img_height  # WxH of the image
+W, H = img_width, img_height 
 yolo_boxes = pbx.convert_bbox(box, from_type="voc", to_type="yolo", image_size=(W,H))
 print(yolo_boxes)
-
 
 cx = float(yolo_boxes[0])
 cy = float(yolo_boxes[1])
